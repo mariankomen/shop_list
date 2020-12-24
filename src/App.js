@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css';
+import {BrowserRouter, Route} from "react-router-dom";
+import Enter_Field from "./components/enter_field/Enter_Field";
+import All_Items from "./components/all_items/all_item";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+    return (
+        <div className={style.App}>
+            <div className={style.App_content}>
+                <Enter_Field dispatch={props.dispatch}
+                             List_Items={props.state.List_Items}
+                />
+                <All_Items List_Items={props.state.List_Items}
+                           dispatch={props.dispatch}/>
+
+            </div>
+        </div>
+    );
 }
 
 export default App;
