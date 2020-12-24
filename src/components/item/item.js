@@ -1,9 +1,8 @@
 import style_item from "./Item.module.css"
 import Button from '@material-ui/core/Button';
-import TextField from "@material-ui/core/TextField";
-
 
 function Item(props) {
+    let Remove = props.RemoveItems;
     return (
         <div>
             <div className={style_item.item}>
@@ -12,8 +11,8 @@ function Item(props) {
                     <p>{props.NameFruit}</p>
                 </div>
                 <div>
-                    <Button variant="contained" color="primary"> Done </Button>
-                    <Button variant="contained" color="primary"> Delete </Button>
+                    <Button variant="contained" color="primary" onClick={Remove}> Done </Button>
+                    <Button variant="contained" color="primary" onClick={Remove}> Delete </Button>
                     <p>Rating:{props.rating}</p>
                 </div>
 

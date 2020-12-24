@@ -25,9 +25,13 @@ function Enter_Field(props) {
     return (
         <div className="App">
             <div className={style.box}>
-                <TextField id="standard-basic" label="Add your fruit" onChange={OnChangeFunc} ref={NewPostElement}/>
+                {/*<TextField id="standard-basic" label="Add your fruit" onChange={OnChangeFunc} ref={NewPostElement}  value={props.textValue}/>*/}
+                <textarea onChange={OnChangeFunc} ref={NewPostElement}  value={props.textValue} />
                 <Button variant="contained" color="primary" onClick={PostClickAdd}>
                     Add
+                </Button>
+                <Button variant="contained" color="primary" onClick={props.FilterItem}>
+                    Filter
                 </Button>
             </div>
         </div>

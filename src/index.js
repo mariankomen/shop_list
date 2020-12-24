@@ -11,6 +11,8 @@ let Rerender = () => {
             <App state={store.GetState()}
                  store={store}
                  dispatch={store.dispatch.bind(store)}
+                 FilterItem={store.FilterItem.bind(store)}
+                 RemoveItems={store.RemoveItems.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')
